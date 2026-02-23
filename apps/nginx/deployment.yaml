@@ -40,7 +40,6 @@ spec:
             <head>
               <meta charset="utf-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <meta http-equiv="refresh" content="2" />
               <title>Argo CD Demo — NGINX</title>
               <style>
                 :root {
@@ -141,7 +140,7 @@ spec:
                       <p>NGINX service load-balancing across multiple pods</p>
                     </div>
                   </div>
-                  <div class="badge"><span class="dot"></span>Live • auto-refresh every 2s</div>
+                  <div class="badge"><span class="dot"></span>Live • manual hard refresh required</div>
                 </div>
 
                 <div class="card">
