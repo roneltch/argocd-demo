@@ -14,170 +14,170 @@ spec:
         app: nginx
     spec:
       containers:
-  - name: nginx
-    image: nginx:stable
-    ports:
-      - containerPort: 80
-    env:
-      - name: POD_NAME
-        valueFrom:
-          fieldRef:
-            fieldPath: metadata.name
-      - name: POD_IP
-        valueFrom:
-          fieldRef:
-            fieldPath: status.podIP
-      - name: NODE_NAME
-        valueFrom:
-          fieldRef:
-            fieldPath: spec.nodeName
-    command: ["/bin/sh", "-c"]
-    args:
-      - |
-        cat >/usr/share/nginx/html/index.html <<'HTML'
-        <!doctype html>
-        <html lang="en">
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta http-equiv="refresh" content="2" />
-          <title>Argo CD Demo — NGINX</title>
-          <style>
-            :root {
-              --bg1: #0b1020;
-              --bg2: #0f1a3a;
-              --card: rgba(255,255,255,0.08);
-              --stroke: rgba(255,255,255,0.14);
-              --text: rgba(255,255,255,0.92);
-              --muted: rgba(255,255,255,0.65);
-              --good: #22c55e;
-              --chip: rgba(34,197,94,0.14);
-            }
-            * { box-sizing: border-box; }
-            body {
-              margin: 0;
-              font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-              color: var(--text);
-              min-height: 100vh;
-              background:
-                radial-gradient(1200px 700px at 15% 20%, #1b2a6b 0%, transparent 55%),
-                radial-gradient(900px 600px at 80% 30%, #2b135c 0%, transparent 55%),
-                linear-gradient(140deg, var(--bg1), var(--bg2));
-              display: grid;
-              place-items: center;
-              padding: 32px;
-            }
-            .wrap { width: min(920px, 100%); }
-            .top {
-              display: flex; gap: 16px; align-items: center; justify-content: space-between;
-              margin-bottom: 18px;
-            }
-            .brand {
-              display: flex; gap: 12px; align-items: center;
-            }
-            .logo {
-              width: 44px; height: 44px; border-radius: 14px;
-              background: linear-gradient(135deg, #22c55e, #60a5fa);
-              box-shadow: 0 14px 40px rgba(0,0,0,0.35);
-            }
-            .title { line-height: 1.1; }
-            .title h1 { margin: 0; font-size: 20px; letter-spacing: 0.2px; }
-            .title p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
-            .badge {
-              display: inline-flex; align-items: center; gap: 8px;
-              padding: 10px 12px; border-radius: 999px;
-              background: var(--chip); border: 1px solid rgba(34,197,94,0.28);
-              color: var(--text); font-size: 13px;
-            }
-            .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 6px rgba(34,197,94,0.15); }
-            .card {
-              background: var(--card);
-              border: 1px solid var(--stroke);
-              border-radius: 20px;
-              box-shadow: 0 24px 80px rgba(0,0,0,0.45);
-              overflow: hidden;
-            }
-            .hero {
-              padding: 22px 22px 8px;
-              border-bottom: 1px solid var(--stroke);
-              background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-            }
-            .hero h2 { margin: 0; font-size: 18px; }
-            .hero p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
-            .grid {
-              display: grid;
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-              gap: 14px;
-              padding: 18px 22px 22px;
-            }
-            .item {
-              padding: 14px 14px;
-              border-radius: 16px;
-              border: 1px solid rgba(255,255,255,0.12);
-              background: rgba(0,0,0,0.18);
-            }
-            .k { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
-            .v { font-size: 15px; font-weight: 650; letter-spacing: 0.2px; word-break: break-word; }
-            .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-            footer {
-              margin-top: 12px;
-              color: rgba(255,255,255,0.5);
-              font-size: 12px;
-              text-align: center;
-            }
-            @media (max-width: 720px) {
-              .grid { grid-template-columns: 1fr; }
-              .top { flex-direction: column; align-items: flex-start; }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="wrap">
-            <div class="top">
-              <div class="brand">
-                <div class="logo"></div>
-                <div class="title">
-                  <h1>Argo CD GitOps Demo</h1>
-                  <p>NGINX service load-balancing across multiple pods</p>
+      - name: nginx
+        image: nginx:stable
+        ports:
+          - containerPort: 80
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            cat >/usr/share/nginx/html/index.html <<'HTML'
+            <!doctype html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <meta http-equiv="refresh" content="2" />
+              <title>Argo CD Demo — NGINX</title>
+              <style>
+                :root {
+                  --bg1: #0b1020;
+                  --bg2: #0f1a3a;
+                  --card: rgba(255,255,255,0.08);
+                  --stroke: rgba(255,255,255,0.14);
+                  --text: rgba(255,255,255,0.92);
+                  --muted: rgba(255,255,255,0.65);
+                  --good: #22c55e;
+                  --chip: rgba(34,197,94,0.14);
+                }
+                * { box-sizing: border-box; }
+                body {
+                  margin: 0;
+                  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+                  color: var(--text);
+                  min-height: 100vh;
+                  background:
+                    radial-gradient(1200px 700px at 15% 20%, #1b2a6b 0%, transparent 55%),
+                    radial-gradient(900px 600px at 80% 30%, #2b135c 0%, transparent 55%),
+                    linear-gradient(140deg, var(--bg1), var(--bg2));
+                  display: grid;
+                  place-items: center;
+                  padding: 32px;
+                }
+                .wrap { width: min(920px, 100%); }
+                .top {
+                  display: flex; gap: 16px; align-items: center; justify-content: space-between;
+                  margin-bottom: 18px;
+                }
+                .brand {
+                  display: flex; gap: 12px; align-items: center;
+                }
+                .logo {
+                  width: 44px; height: 44px; border-radius: 14px;
+                  background: linear-gradient(135deg, #22c55e, #60a5fa);
+                  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+                }
+                .title { line-height: 1.1; }
+                .title h1 { margin: 0; font-size: 20px; letter-spacing: 0.2px; }
+                .title p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+                .badge {
+                  display: inline-flex; align-items: center; gap: 8px;
+                  padding: 10px 12px; border-radius: 999px;
+                  background: var(--chip); border: 1px solid rgba(34,197,94,0.28);
+                  color: var(--text); font-size: 13px;
+                }
+                .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 6px rgba(34,197,94,0.15); }
+                .card {
+                  background: var(--card);
+                  border: 1px solid var(--stroke);
+                  border-radius: 20px;
+                  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+                  overflow: hidden;
+                }
+                .hero {
+                  padding: 22px 22px 8px;
+                  border-bottom: 1px solid var(--stroke);
+                  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+                }
+                .hero h2 { margin: 0; font-size: 18px; }
+                .hero p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+                .grid {
+                  display: grid;
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+                  gap: 14px;
+                  padding: 18px 22px 22px;
+                }
+                .item {
+                  padding: 14px 14px;
+                  border-radius: 16px;
+                  border: 1px solid rgba(255,255,255,0.12);
+                  background: rgba(0,0,0,0.18);
+                }
+                .k { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+                .v { font-size: 15px; font-weight: 650; letter-spacing: 0.2px; word-break: break-word; }
+                .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+                footer {
+                  margin-top: 12px;
+                  color: rgba(255,255,255,0.5);
+                  font-size: 12px;
+                  text-align: center;
+                }
+                @media (max-width: 720px) {
+                  .grid { grid-template-columns: 1fr; }
+                  .top { flex-direction: column; align-items: flex-start; }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="wrap">
+                <div class="top">
+                  <div class="brand">
+                    <div class="logo"></div>
+                    <div class="title">
+                      <h1>Argo CD GitOps Demo</h1>
+                      <p>NGINX service load-balancing across multiple pods</p>
+                    </div>
+                  </div>
+                  <div class="badge"><span class="dot"></span>Live • auto-refresh every 2s</div>
                 </div>
+
+                <div class="card">
+                  <div class="hero">
+                    <h2>Request served by this Pod</h2>
+                    <p>If the pod name / IP changes between refreshes — your Service is load-balancing correctly.</p>
+                  </div>
+                  <div class="grid">
+                    <div class="item">
+                      <div class="k">POD NAME</div>
+                      <div class="v mono">{{POD_NAME}}</div>
+                    </div>
+                    <div class="item">
+                      <div class="k">POD IP</div>
+                      <div class="v mono">{{POD_IP}}</div>
+                    </div>
+                    <div class="item">
+                      <div class="k">NODE</div>
+                      <div class="v mono">{{NODE_NAME}}</div>
+                    </div>
+                    <div class="item">
+                      <div class="k">SERVER TIME</div>
+                      <div class="v mono">{{SERVER_TIME}}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <footer>
+                  Tip: change replicas in Git → Argo reconciles → refresh and watch the identity rotate.
+                </footer>
               </div>
-              <div class="badge"><span class="dot"></span>Live • auto-refresh every 2s</div>
-            </div>
+            </body>
+            </html>
+            HTML
 
-            <div class="card">
-              <div class="hero">
-                <h2>Request served by this Pod</h2>
-                <p>If the pod name / IP changes between refreshes — your Service is load-balancing correctly.</p>
-              </div>
-              <div class="grid">
-                <div class="item">
-                  <div class="k">POD NAME</div>
-                  <div class="v mono">{{POD_NAME}}</div>
-                </div>
-                <div class="item">
-                  <div class="k">POD IP</div>
-                  <div class="v mono">{{POD_IP}}</div>
-                </div>
-                <div class="item">
-                  <div class="k">NODE</div>
-                  <div class="v mono">{{NODE_NAME}}</div>
-                </div>
-                <div class="item">
-                  <div class="k">SERVER TIME</div>
-                  <div class="v mono">{{SERVER_TIME}}</div>
-                </div>
-              </div>
-            </div>
+            export SERVER_TIME="$(date '+%Y-%m-%d %H:%M:%S')"
+            sed -i "s/{{POD_NAME}}/${POD_NAME}/g; s/{{POD_IP}}/${POD_IP}/g; s/{{NODE_NAME}}/${NODE_NAME}/g; s/{{SERVER_TIME}}/${SERVER_TIME}/g" /usr/share/nginx/html/index.html
 
-            <footer>
-              Tip: change replicas in Git → Argo reconciles → refresh and watch the identity rotate.
-            </footer>
-          </div>
-        </body>
-        </html>
-        HTML
-
-        export SERVER_TIME="$(date '+%Y-%m-%d %H:%M:%S')"
-        sed -i "s/{{POD_NAME}}/${POD_NAME}/g; s/{{POD_IP}}/${POD_IP}/g; s/{{NODE_NAME}}/${NODE_NAME}/g; s/{{SERVER_TIME}}/${SERVER_TIME}/g" /usr/share/nginx/html/index.html
-
-        nginx -g 'daemon off;'
+            nginx -g 'daemon off;'
